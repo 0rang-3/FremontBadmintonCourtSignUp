@@ -14,7 +14,7 @@ cc = ["", "", "", "", "", ""]
 
 cs = ["", "", "", "", "", ""]
 
-MAX_TIME_ON_COURT = 0.5
+MAX_TIME_ON_COURT = 10.0
 
 app = Flask(__name__)
 
