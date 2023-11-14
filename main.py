@@ -1,5 +1,4 @@
 from flask import Flask, redirect, url_for, render_template, request
-from apscheduler.schedulers.background import BackgroundScheduler
 import time, atexit
 from datetime import datetime
 
