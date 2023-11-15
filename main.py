@@ -40,10 +40,6 @@ def home():
         nm2 = request.form["nm2"]
         nm3 = request.form["nm3"]
         nm4 = request.form["nm4"]
-        
-
-        if(nm1 == "admin" and int(courtNum) == 0):
-            return redirect(url_for("login"))
 
 
         if(int(courtNum) == 1):
