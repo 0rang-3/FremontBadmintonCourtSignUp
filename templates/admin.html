@@ -4,11 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            }
+    </style>
 </head>
 <body>
     <h1>Welcome Admin!</h1>
     <form action="#" method="post">
-        <p>MAX_TIME_ON_COURT (Float): <input type="text" name="mton"></p>
+        <p>MAX_TIME_PER_COURT (Float): <input type="text" name="mton"></p>
+        <table>
+            <tr>
+                <th>Reserve Court</th>
+                <th>(For Training)</th>
+            </tr>
+            <tr>
+                <td><label for="courts">Choose a court:</label></td>
+                <td>
+                    <select id="courts" name="courts">
+                        <option value="0">Select Court</option>
+                        <option value="1">Court 1</option>
+                        <option value="2">Court 2</option>
+                        <option value="3">Court 3</option>
+                        <option value="4">Court 4</option>
+                        <option value="5">Court 5</option>
+                        <option value="6">Court 6</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>RESERVE_TIME_LENGTH (Float):</td>
+                <td><input type="text" name="reserve_length"></td>
+            </tr>
+        </table>
         <td><p><input type="submit" value="SAVE CHANGES"/></p></td>
     </form>
     <a href="/">Return to Homepage</a>
