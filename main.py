@@ -11,6 +11,7 @@ c5 = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""
 c6 = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
 
 cc = ["", "", "", "", "", ""]
+cc_rounded = ["", "", "", "", "", ""]
 
 cs = ["", "", "", "", "", ""]
 
@@ -470,10 +471,16 @@ def home():
             minCol[5] = "yellow"
         if(cc[5] != "" and float(cc[5]) > 5.0):
             minCol[5] = "lightgreen"
+        
+        for x in range(6):
+            if(cc[x] != ""):
+                var = float(cc[x])
+                var_rounded = round(var, 1)
+                cc_rounded[x] = var_rounded
 
 
 
-        return render_template("index.html", c1=c1, c2=c2, c3=c3, c4=c4, c5=c5, c6=c6, cc=cc, cs=cs, minCol=minCol, reserved=reserved)
+        return render_template("index.html", c1=c1, c2=c2, c3=c3, c4=c4, c5=c5, c6=c6, cc=cc_rounded, cs=cs, minCol=minCol, reserved=reserved)
     else:
         if(c1.index("") != 0 and cs[0] != ""):
             t1 = datetime.strptime(cs[0], "%H:%M:%S")
@@ -755,9 +762,15 @@ def home():
         if(cc[5] != "" and float(cc[5]) > 5.0):
             minCol[5] = "lightgreen"
         
+        for x in range(6):
+            if(cc[x] != ""):
+                var = float(cc[x])
+                var_rounded = round(var, 1)
+                cc_rounded[x] = var_rounded
+        
 
 
-        return render_template("index.html", c1=c1, c2=c2, c3=c3, c4=c4, c5=c5, c6=c6, cc=cc, cs=cs, minCol=minCol, reserved=reserved)
+        return render_template("index.html", c1=c1, c2=c2, c3=c3, c4=c4, c5=c5, c6=c6, cc=cc_rounded, cs=cs, minCol=minCol, reserved=reserved)
 
 
 @app.route("/login/", methods=["POST", "GET"])
